@@ -8,7 +8,8 @@
     "start-web": "vite",
     "build-web": "vite build",
     "build": "npm run build-web",
-    "start": "node server/server.js"
+    "start": "node server/server.js",
+    "postinstall": "npx playwright install --with-deps"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -23,10 +24,5 @@
     "@vitejs/plugin-react": "^4.3.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
-  },
-  "scripts": {
-    "build": "npm run build-web",
-    "start": "node server/server.js",
-    "postinstall": "npx playwright install --with-deps"
   }
 }
