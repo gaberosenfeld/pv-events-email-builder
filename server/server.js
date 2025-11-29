@@ -19,9 +19,7 @@ app.post('/api/scrape', async (req, res) => {
     const { max = 50, email, password } = req.body || {};
 
     if (!email || !password) {
-      return res
-        .status(400)
-        .json({ error: 'Missing email or password' });
+      return res.status(400).json({ error: 'Missing email or password' });
     }
 
     const events = await scrapeEvents({
@@ -47,7 +45,7 @@ app.post('/api/email', async (req, res) => {
   res.send(html);
 });
 
-// Serve the web UI
-app.use(express.static('web'));
+// Serve the built web UI (Vite build output)
+app.use(express.static('dist'));
 
 app.listen(PORT, () => console.log(`[server] http://localhost:${PORT}`));
