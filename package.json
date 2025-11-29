@@ -23,5 +23,10 @@
     "@vitejs/plugin-react": "^4.3.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
+  },
+  "scripts": {
+    "build": "npm run build-web",
+    "start": "node server/server.js",
+    "postinstall": "npx playwright install --with-deps"
   }
 }
